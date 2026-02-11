@@ -1,0 +1,52 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Global Security Headers and Default HTML Caching
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+    Cache-Control = "no-cache"
+    Report-To = '{"group":"csp-endpoint","max_age":10886400,"endpoints":[{"url":"/.netlify/functions/csp-report"}]}'
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'sha256-sPAFp515QSIiWO0k+lWkzthIY8fVar7L6UGdrucfLDM=' 'sha256-+3n4sETGpqvHFIzfGK8DSsUmUc6aR55WSz76mBhnplo=' 'sha256-dJUX+1p9uJ4qDrblt5ZfyHmYchB0opFm5ntGlWjbNIs=' 'sha256-zNhosN/QIYaX7iQpPyV1WnicK3Pd3ScpasptBEAjpys=' 'sha256-90AWynZRaJ4Om+uO09LoSymSYItTtZhWAhbJYm54BxQ=' 'sha256-rkzbxZbZ49Re2n1cINDI5Y2bqx5et1NZKuxiW/Pc0is=' 'sha256-oXr5QUAiszjo2WG4943BNoxg1DgNy17eBlf7Ayl8ab4=' 'sha256-QMaYlRxC3bsZb1Nr02ZOPHrMaCEDbkQHY3FO88ulfGc=' 'sha256-renhPUa0kvi/W064hYpgtBO8YvSkj+KlDqRXHNKDxco=' 'sha256-dr4s5Zhfk78oxv0CDKBNVoGnhWW2EE/Vgi3XShz86zk=' 'sha256-GKYCiP3S7/ZkQzhrPdBXQ3HFxGJ3+ezqQkfN+TBROdU=' 'sha256-edGU4cP2s5CjXgiAeJioVsO0PQhUXzgk0QHIE+Tys6M=' 'sha256-pe3YDHOmT0I3dk+Oh9XD5c/39wM5uBUkEx+UMW9EolA=' 'sha256-F5xWgCoL7xITxu1zn2HLagI63sstsVMO+B/ogjOZVNg=' 'sha256-Jz7dbllsjBQxqTRk5gdFP1GgHFwymZK7L/RKrQAqtSg=' 'sha256-At2H3rXn0x3bCBRNkFS/HUbN7dlgndRQrVV6kXYxVSc=' 'sha256-qz9DYMn3s6u1zUcGJzRUDY1yghR+nkRNNP4DTNwFX4E=' 'sha256-wLfKAfEEWbtl8HCsMaRiSWrJj1Is6ZynCcRYTJRThsY=' 'sha256-CvD71A7VzW421DUOyReGA8eTkZQtInXAeXN1BjUYxsI=' 'sha256-WXrWYZ5ZCIjuED9LYPMM8pJ3G2e5cTYghKV/gikOk/0=' 'sha256-wLZ6xdIi5gjhNIafXoPQcGXld54y7dqWJ3lC+DmlPTQ=' 'sha256-4QaXkWHhdyX/ZH5Y9Tt/SUZ9DzdaznSqhuyI9hhQnO0=' https://www.googletagmanager.com https://www.google-analytics.com https://*.clarity.ms https://c.bing.com https://esm.sh; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://*.clarity.ms https://c.bing.com; connect-src 'self' https://www.google-analytics.com https://*.clarity.ms https://c.bing.com; frame-src 'self'; report-uri /.netlify/functions/csp-report; report-to csp-endpoint"
+
+# Long-Term Caching for Hashed Build Assets
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Short caching for key static files that may change
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/manifest.webmanifest"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/favicon.ico"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# Main SPA Routing Redirect (keep last)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
