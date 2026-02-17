@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Peake Management | UK Digital Marketing Agency</title>
+  <meta name="description"
+    content="High-performance marketing and web design for UK businesses. Generate leads, automate growth, and dominate your market.">
+  <link rel="icon" type="image/jpeg" href="/favicon.jpg">
 
   <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Peake Management | High-Performance Marketing for UK Holiday Parks">
@@ -25,9 +28,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="/assets/hero-poster.webp">
-  <script
-    type="importmap">{"imports":{"react":"https://esm.sh/react@19.0.0","react-dom/client":"https://esm.sh/react-dom@19.0.0/client","lucide-react":"https://esm.sh/lucide-react@0.460.0","react/":"https://esm.sh/react@^19.2.4/","react-dom/":"https://esm.sh/react-dom@^19.2.4/"}}</script>
-  <script src="/js/analytics.js"></script>
 
   <!-- JSON-LD Structured Data -->
   <script
@@ -40,6 +40,52 @@
 
 <body>
   <div id="root"></div>
+  <noscript>
+    <h1>Peake Management | UK Digital Marketing Agency</h1>
+    <p>High-performance marketing and web design for UK businesses. We help you generate leads, automate growth, and
+      dominate your market.</p>
+    <h2>Services</h2>
+    <ul>
+      <li>Web Design</li>
+      <li>SEO</li>
+      <li>Lead Generation</li>
+    </ul>
+  </noscript>
+
+  <!-- Hidden Netlify Forms for SPA Detection -->
+  <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="text" name="industry" />
+    <input type="text" name="industry_other" />
+    <input type="text" name="services" />
+    <input type="text" name="budget" />
+    <textarea name="message"></textarea>
+    <input type="text" name="contactMethod" />
+    <input type="checkbox" name="gdpr_consent" />
+  </form>
+
+  <form name="lead-magnet" netlify netlify-honeypot="bot-field" hidden>
+    <input type="email" name="email" />
+    <input type="checkbox" name="gdpr_consent" />
+  </form>
+
+  <form name="website-strategy-session" netlify netlify-honeypot="bot-field" hidden>
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="text" name="businessName" />
+    <input type="tel" name="phone" />
+    <input type="text" name="website" />
+    <input type="text" name="industry" />
+    <input type="text" name="industryOther" />
+    <input type="text" name="goal" />
+    <textarea name="painPoint"></textarea>
+    <input type="text" name="budget" />
+    <input type="text" name="timeline" />
+    <input type="text" name="paymentPreference" />
+    <input type="checkbox" name="gdpr" />
+  </form>
+
   <script type="module" src="index.tsx"></script>
 </body>
 
