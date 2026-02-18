@@ -7,7 +7,7 @@ import { Helmet } from 'react-helmet-async';
 import { SchemaMarkup } from '../components/SchemaMarkup';
 import WebsiteInquiryForm from '../components/WebsiteInquiryForm';
 
-const SEO = ({ title, description, image = '/assets/og-image.jpg', url = 'https://www.peakemanagement.com/websites' }: { title: string, description: string, image?: string, url?: string }) => (
+const SEO = ({ title, description, image = '/assets/hero-poster.webp', url = 'https://www.peakemanagement.com/websites' }: { title: string, description: string, image?: string, url?: string }) => (
     <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />

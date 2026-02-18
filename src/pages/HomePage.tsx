@@ -9,7 +9,7 @@ const SystemSection = React.lazy(() => import('../components/SystemSection'));
 const LeadMagnet = React.lazy(() => import('../components/LeadMagnet'));
 const Mission = React.lazy(() => import('../components/Mission'));
 
-const SEO = ({ title, description, image = '/assets/hero-poster.jpg', url = 'https://www.peakemanagement.com' }: { title: string; description: string; image?: string; url?: string }) => (
+const SEO = ({ title, description, image = '/assets/hero-poster.webp', url = 'https://www.peakemanagement.com' }: { title: string; description: string; image?: string; url?: string }) => (
     <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />

@@ -74,10 +74,10 @@ const Navbar = () => {
             </div>
 
             <div className={`fixed inset-0 bg-white z-[90] flex flex-col items-center justify-center gap-12 transition-all duration-700 ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
-                <Link to="/" onClick={() => setIsOpen(false)} className="text-5xl font-[800] text-[#333333] hover:text-[#F39A31] transition-colors tracking-tighter uppercase">Home</Link>
-                <Link to="/about" onClick={() => setIsOpen(false)} className="text-5xl font-[800] text-[#333333] hover:text-[#F39A31] transition-colors tracking-tighter uppercase">About</Link>
-                <Link to="/results" onClick={() => setIsOpen(false)} className="text-5xl font-[800] text-[#333333] hover:text-[#F39A31] transition-colors tracking-tighter uppercase">Results</Link>
-                <Link to="/websites" onClick={() => setIsOpen(false)} className="text-5xl font-[800] text-[#333333] hover:text-[#F39A31] transition-colors tracking-tighter uppercase border-b-4 border-[#F39A31]">Need a Website?</Link>
+                <Link to="/" onClick={() => setIsOpen(false)} className="text-4xl font-[800] text-[#333333] hover:text-[#F39A31] transition-colors tracking-tighter uppercase">Home</Link>
+                <Link to="/about" onClick={() => setIsOpen(false)} className="text-4xl font-[800] text-[#333333] hover:text-[#F39A31] transition-colors tracking-tighter uppercase">About</Link>
+                <Link to="/results" onClick={() => setIsOpen(false)} className="text-4xl font-[800] text-[#333333] hover:text-[#F39A31] transition-colors tracking-tighter uppercase">Results</Link>
+                <Link to="/websites" onClick={() => setIsOpen(false)} className="text-4xl font-[800] text-[#333333] hover:text-[#F39A31] transition-colors tracking-tighter uppercase border-b-4 border-[#F39A31]">Need a Website?</Link>
                 <a href="https://wa.me/447375064514" className="flex items-center gap-4 text-3xl font-[800] text-[#25D366] mt-8 uppercase tracking-widest">
                     <Phone size={32} /> WhatsApp
                 </a>

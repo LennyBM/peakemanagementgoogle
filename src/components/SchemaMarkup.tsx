@@ -19,7 +19,7 @@ export const SchemaMarkup = ({ type = 'organization', data }: SchemaMarkupProps)
         "url": "https://www.peakemanagement.com",
         "logo": {
             "@type": "ImageObject",
-            "url": "https://www.peakemanagement.com/assets/hero-poster.jpg",
+            "url": "https://www.peakemanagement.com/assets/hero-poster.webp",
             "width": "1200",
             "height": "630"
         },
@@ -86,7 +86,7 @@ export const SchemaMarkup = ({ type = 'organization', data }: SchemaMarkupProps)
                     "@type": "LocalBusiness",
                     "@id": "https://www.peakemanagement.com/#localbusiness",
                     "name": "Peake Management Ltd",
-                    "image": "https://www.peakemanagement.com/assets/hero-poster.jpg",
+                    "image": "https://www.peakemanagement.com/assets/hero-poster.webp",
                     "url": "https://www.peakemanagement.com",
                     "telephone": "+44-7375-064514",
                     "address": {
