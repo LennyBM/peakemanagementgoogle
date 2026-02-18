@@ -12,7 +12,7 @@ const AboutPage = () => {
             name: "Rebecca Peake",
             role: "Founder & Creative",
             image: "/assets/rebecca-profile.webp",
-            bio: "Specializing in brand voice and social growth. Becca ensures your holiday park has a personality that guests fall in love with. She's the creative force behind campaigns that don't just perform—they resonate.",
+            bio: "Specialising in brand voice and social growth. Becca ensures your holiday park has a personality that guests fall in love with. She's the creative force behind campaigns that don't just perform—they resonate.",
             linkedin: "https://www.linkedin.com/in/rebecca-peake-119448147/",
             expertise: ["Brand Strategy", "Social Media", "Content Creation", "Community Building"]
         },
@@ -117,56 +117,7 @@ const AboutPage = () => {
                 </div>
             </section>
 
-            {/* Stats Showcase - Animated Counters */}
-            <section className="py-32 bg-gradient-to-br from-[#1E5F74] to-[#0d3d4d] text-white relative overflow-hidden">
-                <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(white 2px, transparent 2px)', backgroundSize: '50px 50px' }} />
 
-                <div className="container mx-auto px-8 max-w-[1200px] relative z-10">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-[800] tracking-tighter mb-4">
-                            Results That <span className="text-[#F39A31]">Speak</span>
-                        </h2>
-                        <p className="text-xl text-white/70 font-[500]">
-                            We measure success in occupancy and total booking value, not vanity metrics
-                        </p>
-                    </div>
-
-                    <div className="grid md:grid-cols-3 gap-12">
-                        {/* Stat 1 */}
-                        <div className="text-center space-y-4">
-                            <div className="text-7xl md:text-8xl font-[800] bg-gradient-to-r from-[#F39A31] to-[#ff8800] bg-clip-text text-transparent">
-                                <AnimatedCounter end={29} suffix="%" />
-                            </div>
-                            <div className="space-y-2">
-                                <div className="text-sm font-[700] uppercase tracking-[0.3em] text-white/60">Average Occupancy Lift</div>
-                                <p className="text-sm text-white/50 font-[500]">Average across our client portfolio</p>
-                            </div>
-                        </div>
-
-                        {/* Stat 2 */}
-                        <div className="text-center space-y-4">
-                            <div className="text-7xl md:text-8xl font-[800] bg-gradient-to-r from-[#F39A31] to-[#ff8800] bg-clip-text text-transparent">
-                                £<AnimatedCounter end={1.4} decimals={1} suffix="m" />
-                            </div>
-                            <div className="space-y-2">
-                                <div className="text-sm font-[700] uppercase tracking-[0.3em] text-white/60">Direct Bookings Generated</div>
-                                <p className="text-sm text-white/50 font-[500]">For a single luxury resort client</p>
-                            </div>
-                        </div>
-
-                        {/* Stat 3 */}
-                        <div className="text-center space-y-4">
-                            <div className="text-7xl md:text-8xl font-[800] bg-gradient-to-r from-[#F39A31] to-[#ff8800] bg-clip-text text-transparent">
-                                <AnimatedCounter end={100} suffix="%" />
-                            </div>
-                            <div className="space-y-2">
-                                <div className="text-sm font-[700] uppercase tracking-[0.3em] text-white/60">Client Retention</div>
-                                <p className="text-sm text-white/50 font-[500]">Because results speak louder than contracts</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             {/* Values Grid */}
             <section className="py-32 bg-white">

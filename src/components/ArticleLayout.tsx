@@ -131,7 +131,7 @@ const ArticleLayout: React.FC<ArticleLayoutProps> = ({ meta, children }) => {
                             <div>
                                 <h4 className="text-lg font-[800] text-[#333333] mb-2">About {meta.author}</h4>
                                 <p className="text-sm text-[#333333]/70 font-[500] leading-relaxed">
-                                    Founder at Peake Management.Specializing in high-performance automation systems for the hospitality industry. Helping owners get their time back.
+                                    Founder at Peake Management.Specialising in high-performance automation systems for the hospitality industry. Helping owners get their time back.
                                 </p>
                             </div>
                         </div>

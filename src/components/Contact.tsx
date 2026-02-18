@@ -9,6 +9,7 @@ const Contact = () => {
     const [industry, setIndustry] = useState("");
     const [contactMethod, setContactMethod] = useState("email");
     const [submitted, setSubmitted] = useState(false);
+    const [submitError, setSubmitError] = useState<string | null>(null);
 
     const toggleService = (service: string) => {
         setSelectedServices(prev =>
@@ -33,13 +34,14 @@ const Contact = () => {
             searchParams.append(pair[0], pair[1] as string);
         }
 
+        setSubmitError(null);
         fetch('/', {
             method: 'POST',
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: searchParams.toString(),
         })
             .then(() => setSubmitted(true))
-            .catch((error) => alert(error));
+            .catch(() => setSubmitError('Something went wrong. Please try again or contact us directly at leonard@peakemanagement.com'));
     };
 
     return (
@@ -53,7 +55,7 @@ const Contact = () => {
                             <p className="text-2xl text-white/90 leading-relaxed font-[700]">
                                 Ready to increase direct bookings without increasing headcount?
                             </p>
-                            <p className="text-lg text-white/70 leading-relaxed font-[500]">
+                            <p className="text-lg text-white/80 leading-relaxed font-[500]">
                                 We'll audit your booking funnel, identify quick wins, and show you exactly how we'd increase revenue per pitch and occupancy.
                             </p>
 
@@ -109,29 +111,42 @@ const Contact = () => {
                         ) : (
                             <form name="contact" method="post" data-netlify="true" onSubmit={handleSubmit} className="space-y-12">
                                 <input type="hidden" name="form-name" value="contact" />
+                                <input type="hidden" name="bot-field" />
                                 <input type="hidden" name="services" value={selectedServices.join(', ')} />
                                 <input type="hidden" name="contactMethod" value={contactMethod} />
 
                                 <div className="grid md:grid-cols-2 gap-8">
                                     <div className="space-y-4 group">
-                                        <label className="text-[11px] font-[800] uppercase tracking-[0.2em] text-[#333333] group-focus-within:text-[#1E5F74] transition-colors">Your Name *</label>
-                                        <input type="text" name="name" className="w-full bg-[#F9F9F9] border border-[#E5E5E5] rounded-[6px] py-4 px-6 outline-none focus:border-[#F39A31] focus:bg-white font-[600] text-lg text-[#333333] transition-all" placeholder="Enter Full Name" required />
+                                        <label className="text-[11px] font-[800] uppercase tracking-[0.2em] text-[#333333] group-focus-within:text-[#1E5F74] transition-colors duration-300">Your Name *</label>
+                                        <input
+                                            type="text"
+                                            name="name"
+                                            className="w-full bg-[#F9F9F9] border border-[#E5E5E5] rounded-[6px] py-4 px-6 outline-none focus:bg-white font-[600] text-lg text-[#333333] transition-all duration-300 focus:ring-2 focus:ring-[#F39A31]/50 focus:border-[#F39A31] focus:shadow-lg focus:-translate-y-1"
+                                            placeholder="Enter Full Name"
+                                            required
+                                        />
                                     </div>
                                     <div className="space-y-4 group">
-                                        <label className="text-[11px] font-[800] uppercase tracking-[0.2em] text-[#333333] group-focus-within:text-[#1E5F74] transition-colors">Email Address *</label>
-                                        <input type="email" name="email" className="w-full bg-[#F9F9F9] border border-[#E5E5E5] rounded-[6px] py-4 px-6 outline-none focus:border-[#F39A31] focus:bg-white font-[600] text-lg text-[#333333] transition-all" placeholder="Enter Email" required />
+                                        <label className="text-[11px] font-[800] uppercase tracking-[0.2em] text-[#333333] group-focus-within:text-[#1E5F74] transition-colors duration-300">Email Address *</label>
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            className="w-full bg-[#F9F9F9] border border-[#E5E5E5] rounded-[6px] py-4 px-6 outline-none focus:bg-white font-[600] text-lg text-[#333333] transition-all duration-300 focus:ring-2 focus:ring-[#F39A31]/50 focus:border-[#F39A31] focus:shadow-lg focus:-translate-y-1"
+                                            placeholder="Enter Email"
+                                            required
+                                        />
                                     </div>
                                 </div>
 
                                 <div className="space-y-4 group">
-                                    <label className="text-[11px] font-[800] uppercase tracking-[0.2em] text-[#333333] group-focus-within:text-[#1E5F74] transition-colors">Industry Sector</label>
+                                    <label className="text-[11px] font-[800] uppercase tracking-[0.2em] text-[#333333] group-focus-within:text-[#1E5F74] transition-colors duration-300">Industry Sector</label>
                                     <div className="space-y-4">
                                         <div className="relative">
                                             <select
                                                 name="industry"
                                                 value={industry}
                                                 onChange={(e) => setIndustry(e.target.value)}
-                                                className="w-full bg-[#F9F9F9] border border-[#E5E5E5] rounded-[6px] py-4 px-6 outline-none focus:border-[#F39A31] focus:bg-white font-[600] text-lg text-[#333333] appearance-none cursor-pointer transition-all"
+                                                className="w-full bg-[#F9F9F9] border border-[#E5E5E5] rounded-[6px] py-4 px-6 outline-none focus:bg-white font-[600] text-lg text-[#333333] appearance-none cursor-pointer transition-all duration-300 focus:ring-2 focus:ring-[#F39A31]/50 focus:border-[#F39A31] focus:shadow-lg focus:-translate-y-1"
                                             >
                                                 <option value="" disabled>Select Your Industry</option>
                                                 <option>Holiday Parks & Resorts</option>
@@ -153,7 +168,7 @@ const Contact = () => {
                                             <input
                                                 type="text"
                                                 name="industry_other"
-                                                className="w-full bg-[#F9F9F9] border border-[#E5E5E5] rounded-[6px] py-4 px-6 outline-none focus:border-[#F39A31] focus:bg-white font-[600] text-lg text-[#333333] transition-all animate-reveal"
+                                                className="w-full bg-[#F9F9F9] border border-[#E5E5E5] rounded-[6px] py-4 px-6 outline-none focus:bg-white font-[600] text-lg text-[#333333] transition-all duration-300 animate-reveal focus:ring-2 focus:ring-[#F39A31]/50 focus:border-[#F39A31] focus:shadow-lg focus:-translate-y-1"
                                                 placeholder="Please specify your industry..."
                                                 required
                                             />
@@ -169,7 +184,7 @@ const Contact = () => {
                                                 key={service}
                                                 type="button"
                                                 onClick={() => toggleService(service)}
-                                                className={`px-6 py-3 rounded-full text-sm font-[700] border-2 transition-all duration-300 ${selectedServices.includes(service) ? 'bg-[#1E5F74] border-[#1E5F74] text-white' : 'bg-transparent border-[#E5E5E5] text-[#333333]/60 hover:border-[#F39A31] hover:text-[#F39A31]'}`}
+                                                className={`px-6 py-3 rounded-full text-sm font-[700] border-2 transition-all duration-300 hover:-translate-y-1 ${selectedServices.includes(service) ? 'bg-[#1E5F74] border-[#1E5F74] text-white shadow-lg' : 'bg-transparent border-[#E5E5E5] text-[#333333]/60 hover:border-[#F39A31] hover:text-[#F39A31]'}`}
                                             >
                                                 {service}
                                             </button>
@@ -178,9 +193,9 @@ const Contact = () => {
 
                                     {selectedServices.length > 0 && (
                                         <div className="animate-reveal pt-4 space-y-4 group">
-                                            <label className="text-[11px] font-[800] uppercase tracking-[0.2em] text-[#333333] group-focus-within:text-[#1E5F74] transition-colors">Estimated Monthly Budget</label>
+                                            <label className="text-[11px] font-[800] uppercase tracking-[0.2em] text-[#333333] group-focus-within:text-[#1E5F74] transition-colors duration-300">Estimated Monthly Budget</label>
                                             <div className="relative">
-                                                <select name="budget" className="w-full bg-[#F9F9F9] border border-[#E5E5E5] rounded-[6px] py-4 px-6 outline-none focus:border-[#F39A31] focus:bg-white font-[600] text-lg text-[#333333] appearance-none cursor-pointer transition-all">
+                                                <select name="budget" className="w-full bg-[#F9F9F9] border border-[#E5E5E5] rounded-[6px] py-4 px-6 outline-none focus:bg-white font-[600] text-lg text-[#333333] appearance-none cursor-pointer transition-all duration-300 focus:ring-2 focus:ring-[#F39A31]/50 focus:border-[#F39A31] focus:shadow-lg focus:-translate-y-1">
                                                     <option value="" disabled>Select Budget Range</option>
                                                     <option>&lt; £1,000</option>
                                                     <option>£1,000 - £3,000</option>
@@ -194,8 +209,8 @@ const Contact = () => {
                                 </div>
 
                                 <div className="space-y-4 group">
-                                    <label className="text-[11px] font-[800] uppercase tracking-[0.2em] text-[#333333] group-focus-within:text-[#1E5F74] transition-colors">Tell us about your query</label>
-                                    <textarea name="message" className="w-full bg-[#F9F9F9] border border-[#E5E5E5] rounded-[6px] py-4 px-6 outline-none focus:border-[#F39A31] focus:bg-white font-[500] text-lg text-[#333333] transition-all min-h-[120px] resize-none" placeholder="How can we help you grow?" />
+                                    <label className="text-[11px] font-[800] uppercase tracking-[0.2em] text-[#333333] group-focus-within:text-[#1E5F74] transition-colors duration-300">Tell us about your query</label>
+                                    <textarea name="message" className="w-full bg-[#F9F9F9] border border-[#E5E5E5] rounded-[6px] py-4 px-6 outline-none focus:bg-white font-[500] text-lg text-[#333333] transition-all duration-300 min-h-[120px] resize-none focus:ring-2 focus:ring-[#F39A31]/50 focus:border-[#F39A31] focus:shadow-lg focus:-translate-y-1" placeholder="How can we help you grow?" />
                                 </div>
 
                                 <div className="space-y-4">
@@ -236,6 +251,11 @@ const Contact = () => {
                                 <button type="submit" className="w-full bg-[#F39A31] text-[#333333] py-5 rounded-[8px] font-[800] text-[14px] uppercase tracking-[0.3em] hover:bg-[#333333] hover:text-white transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 group">
                                     {getSubmitText()} <ArrowRight className="inline-block ml-2 group-hover:translate-x-1 transition-transform" />
                                 </button>
+                                {submitError && (
+                                    <div role="alert" className="mt-4 p-4 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm font-[600]">
+                                        {submitError}
+                                    </div>
+                                )}
                             </form>
                         )}
                     </div>

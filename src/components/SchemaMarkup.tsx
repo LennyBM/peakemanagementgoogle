@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 
 interface SchemaMarkupProps {
     type?: 'organization' | 'localBusiness' | 'service' | 'website' | 'faq' | 'blog' | 'breadcrumb';
-    data?: any;
+    data?: Record<string, unknown>;
 }
 
 export const SchemaMarkup = ({ type = 'organization', data }: SchemaMarkupProps) => {

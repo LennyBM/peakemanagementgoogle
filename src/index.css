@@ -9,6 +9,7 @@
 }
 
 @layer components {
+  /* Fixed: removed clip-path so hidden elements don't occupy layout space */
   .animate-reveal {
     animation: reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
@@ -17,20 +18,51 @@
     animation: float 6s ease-in-out infinite;
   }
 
+  .animate-float-slow {
+    animation: float 10s ease-in-out infinite;
+  }
+
   .animate-marquee {
-    animation: marquee 30s linear infinite;
+    animation: marquee 20s linear infinite;
+  }
+
+  .animate-scroll-bounce {
+    animation: scrollBounce 2s ease-in-out infinite;
+  }
+
+  /* Glass panel utility used throughout WebsitesPage */
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Gradient text utility */
+  .text-gradient {
+    background: linear-gradient(135deg, #F39A31 0%, #1E5F74 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Orb glow — decorative only, no layout impact */
+  .orb-glow {
+    pointer-events: none;
+    will-change: transform;
   }
 }
 
 @layer utilities {
+  /* Fixed: no clip-path — uses opacity + translateY only to avoid blank-space layout bugs */
   @keyframes reveal {
     from {
-      clip-path: inset(100% 0 0 0);
-      transform: translateY(30px);
+      opacity: 0;
+      transform: translateY(20px);
     }
 
     to {
-      clip-path: inset(0 0 0 0);
+      opacity: 1;
       transform: translateY(0);
     }
   }
@@ -54,6 +86,20 @@
 
     100% {
       transform: translateX(-50%);
+    }
+  }
+
+  @keyframes scrollBounce {
+
+    0%,
+    100% {
+      transform: translateY(0);
+      opacity: 0.3;
+    }
+
+    50% {
+      transform: translateY(6px);
+      opacity: 0.7;
     }
   }
 

@@ -118,8 +118,8 @@ const CaseStudiesIndex = () => {
     return (
         <div className="min-h-screen bg-white text-[#333333]">
             <Helmet>
-                <title>Case Studies & Results | Peake Management</title>
-                <meta name="description" content="See how we've helped UK holiday parks and luxury resorts increase direct bookings and occupancy through high-performance marketing systems." />
+                <title>Client Success Stories | Peake Management</title>
+                <meta name="description" content="See how we help ambitious businesses scale through high-performance marketing systems." />
             </Helmet>
             <SchemaMarkup type="breadcrumb" />
 
@@ -133,11 +133,11 @@ const CaseStudiesIndex = () => {
                             <span className="text-[10px] font-[800] uppercase tracking-[0.4em] text-[#F39A31]">Proven Results</span>
                         </div>
                         <h1 className="text-6xl md:text-8xl font-[800] tracking-tighter text-white leading-[0.9]">
-                            HOLIDAY PARK<br />
+                            CLIENT<br />
                             <span className="text-[#F39A31]">SUCCESS STORIES</span>
                         </h1>
                         <p className="text-xl text-white/80 font-[500] max-w-2xl leading-relaxed">
-                            Real results for UK holiday parks and luxury resorts. From £1.4m in resort sales to year-round qualified leads, see how we transform marketing into measurable occupancy lift.
+                            Real results for ambitious businesses. See how we transform marketing into measurable revenue and sustainable growth.
                         </p>
                     </div>
                 </div>

@@ -4,15 +4,13 @@ import { Monitor, Megaphone, Cpu, BarChart3, Users, Check, ArrowRight, Zap, Targ
 import { SchemaMarkup } from '../components/SchemaMarkup';
 
 const ServicesPage = () => {
-    const [selectedTier, setSelectedTier] = useState<'foundation' | 'growth' | 'scale'>('growth');
-
     const services = [
         {
             icon: Monitor,
             title: "Direct Booking Engineering",
             shortDesc: "Award-winning digital experiences engineered for conversion",
-            fullDesc: "Your website becomes your best salesperson. We build fast, beautiful, conversion-optimized sites that turn visitors into guests. No templates, no compromises.",
-            features: ["Custom design", "Mobile-first", "SEO optimized", "Fast loading", "Lead capture"]
+            fullDesc: "Your website becomes your best salesperson. We build fast, beautiful, conversion-optimised sites that turn visitors into guests. No templates, no compromises.",
+            features: ["Custom design", "Mobile-first", "SEO optimised", "Fast loading", "Lead capture"]
         },
         {
             icon: Megaphone,
@@ -39,56 +37,8 @@ const ServicesPage = () => {
             icon: Users,
             title: "Paid Advertising",
             shortDesc: "Performance campaigns that scale profitably",
-            fullDesc: "We manage your ad spend like it's our own money. Every pound is tracked, tested, and optimized for maximum ROI.",
-            features: ["Campaign strategy", "Ad creative", "Audience targeting", "Budget optimization", "Performance reporting"]
-        }
-    ];
-
-    const pricingTiers = [
-        {
-            id: 'foundation' as const,
-            name: "Foundation",
-            price: "£1,500",
-            description: "Perfect for new parks establishing their direct booking foundation",
-            features: [
-                "Website design & development",
-                "Basic SEO setup",
-                "Google Analytics integration",
-                "Monthly performance report",
-                "Email support"
-            ],
-            cta: "Get Started"
-        },
-        {
-            id: 'growth' as const,
-            name: "Growth",
-            price: "£3,000",
-            description: "Best for parks ready to dominate their region and maximize occupancy",
-            popular: true,
-            features: [
-                "Everything in Foundation",
-                "Paid advertising (Meta & Google)",
-                "Email automation setup",
-                "Social media management",
-                "Weekly strategy calls",
-                "Priority support"
-            ],
-            cta: "Most Popular"
-        },
-        {
-            id: 'scale' as const,
-            name: "Scale",
-            price: "£5,000+",
-            description: "For established park groups maximizing revenue per guest",
-            features: [
-                "Everything in Growth",
-                "Full marketing team access",
-                "Advanced automation & AI",
-                "Custom integrations",
-                "Daily Slack support",
-                "Quarterly strategy sessions"
-            ],
-            cta: "Let's Talk"
+            fullDesc: "We manage your ad spend like it's our own money. Every pound is tracked, tested, and optimised for maximum ROI.",
+            features: ["Campaign strategy", "Ad creative", "Audience targeting", "Budget optimisation", "Performance reporting"]
         }
     ];
 
@@ -113,7 +63,7 @@ const ServicesPage = () => {
         },
         {
             step: "4",
-            title: "Optimize",
+            title: "Optimise",
             desc: "Test, iterate, and compound your growth",
             timeline: "Monthly"
         }
@@ -212,74 +162,6 @@ const ServicesPage = () => {
                                 </div>
                             </div>
                         ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Pricing Section */}
-            <section className="py-32 bg-gradient-to-b from-white to-[#F5F5F5]">
-                <div className="container mx-auto px-8 max-w-[1200px]">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-[800] tracking-tighter mb-4">
-                            Investment <span className="text-[#F39A31]">Tiers</span>
-                        </h2>
-                        <p className="text-xl text-[#333333]/70 font-[500]">
-                            Flexible engagement options for every stage of growth
-                        </p>
-                    </div>
-
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {pricingTiers.map((tier) => (
-                            <div
-                                key={tier.id}
-                                className={`relative bg-white p-8 rounded-[24px] border-2 transition-all duration-500 ${tier.popular
-                                    ? 'border-[#F39A31] shadow-2xl scale-105'
-                                    : 'border-[#E5E5E5] hover:border-[#F39A31] hover:shadow-xl'
-                                    }`}
-                            >
-                                {tier.popular && (
-                                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#F39A31] text-white px-6 py-2 rounded-full text-xs font-[800] uppercase tracking-wider">
-                                        Most Popular
-                                    </div>
-                                )}
-
-                                <div className="space-y-6">
-                                    <div className="space-y-2">
-                                        <h3 className="text-2xl font-[800] text-[#1E5F74]">{tier.name}</h3>
-                                        <div className="flex items-baseline gap-2">
-                                            <span className="text-5xl font-[800] text-[#333333]">{tier.price}</span>
-                                            <span className="text-sm font-[600] text-[#333333]/60">/month</span>
-                                        </div>
-                                        <p className="text-sm text-[#333333]/70 font-[500]">{tier.description}</p>
-                                    </div>
-
-                                    <div className="space-y-3 py-6 border-t border-b border-[#E5E5E5]">
-                                        {tier.features.map((feature, idx) => (
-                                            <div key={idx} className="flex items-start gap-3">
-                                                <Check size={20} className="text-[#F39A31] flex-shrink-0 mt-0.5" />
-                                                <span className="text-sm font-[500] text-[#333333]">{feature}</span>
-                                            </div>
-                                        ))}
-                                    </div>
-
-                                    <a
-                                        href="/#contact"
-                                        className={`block text-center px-8 py-4 rounded-[8px] font-[800] text-sm uppercase tracking-[0.2em] transition-all ${tier.popular
-                                            ? 'bg-[#F39A31] text-white hover:scale-105 hover:shadow-xl'
-                                            : 'bg-[#1E5F74] text-white hover:bg-[#F39A31]'
-                                            }`}
-                                    >
-                                        {tier.cta}
-                                    </a>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    <div className="mt-12 text-center">
-                        <p className="text-sm text-[#333333]/60 font-[500]">
-                            All tiers include 3-month minimum commitment. One-off projects available upon request.
-                        </p>
                     </div>
                 </div>
             </section>

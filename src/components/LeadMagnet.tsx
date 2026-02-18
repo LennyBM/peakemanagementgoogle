@@ -47,6 +47,7 @@ const LeadMagnet = () => {
                             <div className="flex flex-col gap-3 w-full md:w-auto">
                                 <div className="flex gap-2 w-full md:w-auto">
                                     <input type="hidden" name="form-name" value="lead-magnet" />
+                                    <input type="hidden" name="bot-field" />
                                     <input
                                         type="email"
                                         name="email"

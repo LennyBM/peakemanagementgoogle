@@ -16,7 +16,7 @@ const FAQPage = () => {
                 },
                 {
                     q: "What's the typical timeline to see results?",
-                    a: "Most clients see initial improvements within 30-60 days (better website performance, lead flow starting). Significant revenue impact typically shows in 90-120 days as campaigns optimize and compound. We're building systems, not running one-off promotions."
+                    a: "Most clients see initial improvements within 30-60 days (better website performance, lead flow starting). Significant revenue impact typically shows in 90-120 days as campaigns optimise and compound. We're building systems, not running one-off promotions."
                 },
                 {
                     q: "How much should I budget for marketing?",
@@ -29,7 +29,7 @@ const FAQPage = () => {
             questions: [
                 {
                     q: "What's included in your packages?",
-                    a: "Our Foundation tier (£1,500/mo) includes website design, basic SEO, and monthly support. Growth tier (£3,000/mo) adds paid ads, social media, and email automation. Scale tier (£5,000+/mo) includes everything plus a dedicated strategist and custom reporting. All packages are customizable."
+                    a: "We offer tiered engagement models tailored to your park's growth stage. Foundation focus on your digital presence, Growth drives active guest acquisition, and Scale provides comprehensive multi-channel dominance. All packages are customizable to your specific revenue goals."
                 },
                 {
                     q: "Do you only work with holiday parks and resorts?",
@@ -37,7 +37,7 @@ const FAQPage = () => {
                 },
                 {
                     q: "Can I just hire you for one specific thing (like a website)?",
-                    a: "Yes, but we recommend our full-service approach for best results. A beautiful website without traffic is a waste. Traffic without conversion optimization leaves money on the table. We're most effective when we control the entire customer journey."
+                    a: "Yes, but we recommend our full-service approach for best results. A beautiful website without traffic is a waste. Traffic without conversion optimisation leaves money on the table. We're most effective when we control the entire customer journey."
                 }
             ]
         },
@@ -46,7 +46,7 @@ const FAQPage = () => {
             questions: [
                 {
                     q: "How hands-on do I need to be?",
-                    a: "Minimal. We handle strategy, execution, and optimization. You'll have a weekly 15-minute check-in call and approve major campaigns. Most clients spend 1-2 hours per month on marketing after onboarding."
+                    a: "Minimal. We handle strategy, execution, and optimisation. You'll have a weekly 15-minute check-in call and approve major campaigns. Most clients spend 1-2 hours per month on marketing after onboarding."
                 },
                 {
                     q: "Do you work with our existing tools (CRM, booking system, etc.)?",
@@ -67,7 +67,7 @@ const FAQPage = () => {
                 },
                 {
                     q: "What happens to my existing website?",
-                    a: "We can redesign it, migrate it, or build fresh. If you love your current site, we'll optimize it. If it's holding you back, we'll rebuild it. Either way, we'll ensure zero downtime and preserve your SEO."
+                    a: "We can redesign it, migrate it, or build fresh. If you love your current site, we'll optimise it. If it's holding you back, we'll rebuild it. Either way, we'll ensure zero downtime and preserve your SEO."
                 },
                 {
                     q: "Do you handle GDPR compliance and legal stuff?",
@@ -80,7 +80,7 @@ const FAQPage = () => {
             questions: [
                 {
                     q: "Can you guarantee specific results?",
-                    a: "No one can ethically guarantee specific numbers. What we can guarantee: strategic thinking, rapid execution, transparent reporting, and relentless optimization. Our case studies show what's possible (29% average occupancy lift, £1.4m in direct bookings), but your results depend on your market, offer, and execution."
+                    a: "No one can ethically guarantee specific numbers. What we can guarantee: strategic thinking, rapid execution, transparent reporting, and relentless optimisation. Our case studies show what's possible (29% average occupancy lift, £1.4m in direct bookings), but your results depend on your market, offer, and execution."
                 },
                 {
                     q: "How do you measure success?",

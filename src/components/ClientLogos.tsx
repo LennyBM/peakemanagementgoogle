@@ -3,6 +3,7 @@ import React from 'react';
 
 const ClientLogos = () => {
     const logos = [
+        { name: "Precision Decking Ltd", src: "https://ui-avatars.com/api/?name=Precision+Decking&color=fff&background=F39A31&bold=true" },
         { name: "Whalesborough", src: "/assets/whalesborough.webp" },
         { name: "Atlantic Bays", src: "/assets/atlantic-bays.webp" },
         { name: "Whitsand Bay Fort", src: "/assets/whitsand-bay-fort.webp" },

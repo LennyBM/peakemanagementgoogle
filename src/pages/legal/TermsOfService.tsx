@@ -37,7 +37,7 @@ const TermsOfService = () => {
 
             <h2>4. Products or Services</h2>
             <p>
-                We have made every effort to display as accurately as possible the colors and images of our products that appear at the store. We cannot guarantee that your computer monitor's display of any color will be accurate.
+                We have made every effort to display as accurately as possible the colours and images of our products that appear at the store. We cannot guarantee that your computer monitor's display of any colour will be accurate.
             </p>
 
             <h2>5. Third-Party Links</h2>

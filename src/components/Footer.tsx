@@ -26,12 +26,12 @@ const Footer = () => {
 
                     <div className="text-right space-y-4">
                         <div className="flex flex-wrap gap-6 justify-end text-[10px] font-[500] uppercase tracking-[0.2em] text-[#333333]/60">
-                            <Link to="/about" className="hover:text-[#1E5F74] transition-colors">About</Link>
-                            <Link to="/faq" className="hover:text-[#1E5F74] transition-colors">FAQ</Link>
-                            <Link to="/blog" className="hover:text-[#1E5F74] transition-colors">Insights</Link>
-                            <Link to="/privacy" className="hover:text-[#1E5F74] transition-colors">Privacy Policy</Link>
-                            <Link to="/cookies" className="hover:text-[#1E5F74] transition-colors">Cookies</Link>
-                            <Link to="/terms" className="hover:text-[#1E5F74] transition-colors">Terms of Service</Link>
+                            <Link to="/about" className="hover:text-[#1E5F74] transition-colors" aria-label="Learn about Peake Management">About</Link>
+                            <Link to="/faq" className="hover:text-[#1E5F74] transition-colors" aria-label="Frequently asked questions">FAQ</Link>
+                            <Link to="/blog" className="hover:text-[#1E5F74] transition-colors" aria-label="Read our business insights">Insights</Link>
+                            <Link to="/privacy" className="hover:text-[#1E5F74] transition-colors" aria-label="Privacy Policy">Privacy Policy</Link>
+                            <Link to="/cookies" className="hover:text-[#1E5F74] transition-colors" aria-label="Cookie Policy">Cookies</Link>
+                            <Link to="/terms" className="hover:text-[#1E5F74] transition-colors" aria-label="Terms of Service">Terms of Service</Link>
                         </div>
                         <div className="space-y-2">
                             <p className="text-[10px] font-[500] text-[#333333]/30">

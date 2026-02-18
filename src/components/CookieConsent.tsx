@@ -24,7 +24,7 @@ const CookieConsent = () => {
     const handleConsent = (accepted: boolean) => {
         const expiry = new Date();
         expiry.setFullYear(expiry.getFullYear() + 1);
-        document.cookie = `peake-consent=${accepted}; expires=${expiry.toUTCString()}; path=/; SameSite=Lax`;
+        document.cookie = `peake-consent=${accepted}; expires=${expiry.toUTCString()}; path=/; SameSite=Lax; Secure`;
 
         if (accepted && window.peakeInitTracking) {
             window.peakeInitTracking(true);
@@ -59,7 +59,7 @@ const CookieConsent = () => {
 
                 <div className="space-y-4 mb-8 relative">
                     <p className="text-sm text-[#333333]/60 font-[500] leading-relaxed">
-                        We use cookies to enhance your experience, analyze site traffic, and support our marketing efforts. your data is handled with care.
+                        We use cookies to enhance your experience, analyse site traffic, and support our marketing efforts. your data is handled with care.
                     </p>
                     <div className="flex items-center gap-2 text-[11px] font-[700] text-[#1E5F74]">
                         <Shield size={14} />

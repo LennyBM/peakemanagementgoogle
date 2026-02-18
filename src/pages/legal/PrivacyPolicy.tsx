@@ -22,7 +22,7 @@ const PrivacyPolicy = () => {
             </p>
             <ul>
                 <li>
-                    <strong>Device information:</strong> Examples include version of web browser, IP address, time zone, cookie information, what sites or products you view, search terms, and how you interact with the Site. This is collected automatically to load the Site accurately for you and to perform analytics on Site usage to optimize our Site.
+                    <strong>Device information:</strong> Examples include version of web browser, IP address, time zone, cookie information, what sites or products you view, search terms, and how you interact with the Site. This is collected automatically to load the Site accurately for you and to perform analytics on Site usage to optimise our Site.
                 </li>
                 <li>
                     <strong>Order information:</strong> Examples include name, billing address, shipping address, payment information, email address, and phone number. This is collected to provide products or services to you, to process your payment information, arrange for shipping, and provide you with invoices and/or order confirmations.
